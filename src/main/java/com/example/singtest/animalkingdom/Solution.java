@@ -104,6 +104,38 @@ public class Solution {
 		Caterpillar caterPillar = new Caterpillar();
 		caterPillar.fly();
 		caterPillar.walk();
+		
+		System.out.println("--------ButterflyWithTransformation------------");
+		Butterfly transformButterfly = caterPillar.transform();
+		transformButterfly.fly();
+		transformButterfly.makesound();
+
+		System.out.println("--------Count------------");
+		Animal[] animals = new Animal[] { new Bird(), new Duck(), new Chicken(), new Rooster(), new Parrot(),
+				new Fish(), new Shark(), new ClownFish(), new Dolphin(), new Frog(), new Dog(), new Butterfly(),
+				new Cat() };
+		int totalSwim = 0;
+		int totalFly = 0;
+		int totalWalk = 0;
+		int totalSing = 0;
+		for (Animal anim : animals) {
+			if (anim.isCanFly()) {
+				totalFly++;
+			}
+			if (anim.isCanSwim()) {
+				totalSwim++;
+			}
+			if (anim.isCanWalk()) {
+				totalWalk++;
+			}
+			if (anim.isCanSing()) {
+				totalSing++;
+			}
+		}
+		System.out.println("Total Fly:- " + totalFly);
+		System.out.println("Total Swim:- " + totalSwim);
+		System.out.println("Total Walk:- " + totalWalk);
+		System.out.println("Total Sing:- " + totalSing);
 
 	}
 }
