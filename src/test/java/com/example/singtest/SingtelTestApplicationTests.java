@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.example.singtest.animalkingdom.Animal;
 import com.example.singtest.animalkingdom.Bird;
+import com.example.singtest.animalkingdom.Butterfly;
 import com.example.singtest.animalkingdom.Cat;
 import com.example.singtest.animalkingdom.Chicken;
 import com.example.singtest.animalkingdom.ClownFish;
@@ -208,6 +209,21 @@ class SingtelTestApplicationTests {
 	void testDolphinSwims() {
 		Fish dolphin = new Dolphin().getDolphin();
 		Assert.assertTrue(dolphin.isCanSwim());
+	}
+	
+	@Test
+	void testButterFlyFlies() {
+		Animal butterfly = new Butterfly();
+		Assert.assertTrue(butterfly.isCanFly());
+	}
+
+	@Test
+	void testButterFlyDoesntSound() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Animal butterfly = new Butterfly();
+		butterfly.makesound();
+		Assert.assertEquals("Doesn't make sound\n", outContent.toString());
 	}
 
 }

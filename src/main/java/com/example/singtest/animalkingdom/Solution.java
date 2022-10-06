@@ -94,6 +94,11 @@ public class Solution {
 		Fish dolphinFish = new Dolphin().getDolphin();
 		dolphinFish.swim();
 		dolphinFish.walk();
+		
+		System.out.println("--------Butterfly------------");
+		Animal butterfly = new Butterfly();
+		butterfly.fly();
+		butterfly.makesound();
 
 	}
 }
