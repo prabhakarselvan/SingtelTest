@@ -41,6 +41,31 @@ public class Solution {
 		rooster1.fly();
 		rooster1.swim();
 		rooster1.walk();
+		
+		System.out.println("--------Parrot Living with Dog------------");
+		Animal livingWithDog = new Parrot(new Dog());
+		livingWithDog.makesound();
+
+		System.out.println("--------Parrot Living Cat------------");
+		Animal livingWithCat = new Parrot(new Cat());
+		livingWithCat.makesound();
+
+		System.out.println("--------Parrot Living Rooster------------");
+		Animal livingWithRooster = new Parrot(new Rooster());
+		livingWithRooster.makesound();
+
+		System.out.println("--------Parrot Living Telephone------------");
+		Animal livingWithTelelphone = new Parrot(new Telephone());
+		livingWithTelelphone.makesound();
+
+		System.out.println("--------Parrot Living Door------------");
+		Animal parrotLivingWithRooster = new Parrot(new LivingWith() {
+			@Override
+			public String getSound() {
+				return "Knock Knock";
+			}
+		});
+		parrotLivingWithRooster.makesound();
 
 	}
 }

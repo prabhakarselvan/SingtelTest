@@ -11,8 +11,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.example.singtest.animalkingdom.Animal;
 import com.example.singtest.animalkingdom.Bird;
+import com.example.singtest.animalkingdom.Cat;
 import com.example.singtest.animalkingdom.Chicken;
+import com.example.singtest.animalkingdom.Dog;
 import com.example.singtest.animalkingdom.Duck;
+import com.example.singtest.animalkingdom.LivingWith;
+import com.example.singtest.animalkingdom.Parrot;
 import com.example.singtest.animalkingdom.Rooster;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -78,6 +82,47 @@ class SingtelTestApplicationTests {
 	void testRoosterChickenRelation() {
 		Animal rooster = new Rooster();
 		Assert.assertTrue(rooster instanceof Chicken);
+	}
+	
+	@Test
+	void testParrotLivingWithDog() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Animal parrotLivingWithDog = new Parrot(new Dog());
+		parrotLivingWithDog.makesound();
+		Assert.assertEquals("Woof, woof\n", outContent.toString());
+	}
+
+	@Test
+	void testParrotLivingWithCat() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Animal parrotLivingWithCat = new Parrot(new Cat());
+		parrotLivingWithCat.makesound();
+		Assert.assertEquals("Me ow\n", outContent.toString());
+	}
+
+	@Test
+	void testParrotLivingWithRooster() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Animal parrotLivingWithRooster = new Parrot(new Rooster());
+		parrotLivingWithRooster.makesound();
+		Assert.assertEquals("Cock-a-doodle-doo\n", outContent.toString());
+	}
+
+	@Test
+	void testParrotLivingWithDoorRing() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Animal parrotLivingWithRooster = new Parrot(new LivingWith() {
+			@Override
+			public String getSound() {
+				return "Knock Knock";
+			}
+		});
+		parrotLivingWithRooster.makesound();
+		Assert.assertEquals("Knock Knock\n", outContent.toString());
 	}
 
 }
