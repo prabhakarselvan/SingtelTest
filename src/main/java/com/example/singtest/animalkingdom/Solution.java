@@ -66,6 +66,12 @@ public class Solution {
 			}
 		});
 		parrotLivingWithRooster.makesound();
+		
+		System.out.println("--------Fish------------");
+		Animal fish = new Fish();
+		fish.swim();
+		fish.walk();
+		fish.sing();
 
 	}
 }

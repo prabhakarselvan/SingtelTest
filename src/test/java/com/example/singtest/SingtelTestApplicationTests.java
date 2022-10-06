@@ -15,6 +15,7 @@ import com.example.singtest.animalkingdom.Cat;
 import com.example.singtest.animalkingdom.Chicken;
 import com.example.singtest.animalkingdom.Dog;
 import com.example.singtest.animalkingdom.Duck;
+import com.example.singtest.animalkingdom.Fish;
 import com.example.singtest.animalkingdom.LivingWith;
 import com.example.singtest.animalkingdom.Parrot;
 import com.example.singtest.animalkingdom.Rooster;
@@ -123,6 +124,30 @@ class SingtelTestApplicationTests {
 		});
 		parrotLivingWithRooster.makesound();
 		Assert.assertEquals("Knock Knock\n", outContent.toString());
+	}
+	
+	@Test
+	void testFishDontSing() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Animal fish = new Fish();
+		fish.sing();
+		Assert.assertEquals("Cannot sing\n", outContent.toString());
+	}
+
+	@Test
+	void testFishDontWalk() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Animal fish = new Fish();
+		fish.walk();
+		Assert.assertEquals("Cannot walk\n", outContent.toString());
+	}
+
+	@Test
+	void testFishCanSwim() {
+		Animal fish = new Fish();
+		Assert.assertTrue(fish.isCanSwim());
 	}
 
 }
