@@ -136,6 +136,17 @@ public class Solution {
 		System.out.println("Total Swim:- " + totalSwim);
 		System.out.println("Total Walk:- " + totalWalk);
 		System.out.println("Total Sing:- " + totalSing);
+		
+		System.out.println("-------Rooster sounds in different languages----------");
+
+		Rooster[] roosters = { new Rooster(), new Rooster("Danish"), new Rooster("Dutch"), new Rooster("Finnish"),
+				new Rooster("French"), new Rooster("German"), new Rooster("Greek"), new Rooster("Hebrew"),
+				new Rooster("Hungarian"), new Rooster("Italian"), new Rooster("Japanese"), new Rooster("Portuguese"),
+				new Rooster("Russian"), new Rooster("Swedish"), new Rooster("Turkish"), new Rooster("Urdu") };
+
+		for (Rooster roos : roosters) {
+			roos.makesound();
+		}
 
 	}
 }

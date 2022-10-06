@@ -271,5 +271,41 @@ class SingtelTestApplicationTests {
 		Assert.assertTrue(totalWalk == 8);
 		Assert.assertTrue(totalSing == 5);
 	}
+	
+	@Test
+	void testRoosterLanguages() {
+		Animal rooster = new Rooster();
+		Animal roosterDanish = new Rooster("Danish");
+		Animal roosterDutch = new Rooster("Dutch");
+		Animal roosterFinnish = new Rooster("Finnish");
+		Animal roosterFrench = new Rooster("French");
+		Animal roosterGerman = new Rooster("German");
+		Animal roosterGreek = new Rooster("Greek");
+		Animal roosterHebrew = new Rooster("Hebrew");
+		Animal roosterHungarian = new Rooster("Hungarian");
+		Animal roosterItalian = new Rooster("Italian");
+		Animal roosterJapanese = new Rooster("Japanese");
+		Animal roosterPortuguese = new Rooster("Portuguese");
+		Animal roosterRussian = new Rooster("Russian");
+		Animal roosterSwedish = new Rooster("Swedish");
+		Animal roosterTurkish = new Rooster("Turkish");
+		Animal roosterUrdu = new Rooster("Urdu");
+		Assert.assertEquals("Cock-a-doodle-doo", rooster.getSound());
+		Assert.assertEquals("kykyliky", roosterDanish.getSound());
+		Assert.assertEquals("kukeleku", roosterDutch.getSound());
+		Assert.assertEquals("kukko kiekuu", roosterFinnish.getSound());
+		Assert.assertEquals("cocorico", roosterFrench.getSound());
+		Assert.assertEquals("kikeriki", roosterGerman.getSound());
+		Assert.assertEquals("kikiriki", roosterGreek.getSound());
+		Assert.assertEquals("coo- koo - ri-koo", roosterHebrew.getSound());
+		Assert.assertEquals("kukuriku", roosterHungarian.getSound());
+		Assert.assertEquals("chicchirichi", roosterItalian.getSound());
+		Assert.assertEquals("ko - ke - kok - ko -o", roosterJapanese.getSound());
+		Assert.assertEquals("cucurucu", roosterPortuguese.getSound());
+		Assert.assertEquals("kukareku", roosterRussian.getSound());
+		Assert.assertEquals("kuckeliku", roosterSwedish.getSound());
+		Assert.assertEquals("kuk-kurri-kuuu", roosterTurkish.getSound());
+		Assert.assertEquals("kuklooku", roosterUrdu.getSound());
+	}
 
 }
