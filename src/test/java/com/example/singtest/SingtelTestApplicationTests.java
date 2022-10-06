@@ -13,6 +13,7 @@ import com.example.singtest.animalkingdom.Animal;
 import com.example.singtest.animalkingdom.Bird;
 import com.example.singtest.animalkingdom.Butterfly;
 import com.example.singtest.animalkingdom.Cat;
+import com.example.singtest.animalkingdom.Caterpillar;
 import com.example.singtest.animalkingdom.Chicken;
 import com.example.singtest.animalkingdom.ClownFish;
 import com.example.singtest.animalkingdom.Dog;
@@ -224,6 +225,21 @@ class SingtelTestApplicationTests {
 		Animal butterfly = new Butterfly();
 		butterfly.makesound();
 		Assert.assertEquals("Doesn't make sound\n", outContent.toString());
+	}
+	
+	@Test
+	void testCaterPillarcannotFly() {
+		Animal catterpillar = new Caterpillar();
+		Assert.assertFalse(catterpillar.isCanFly());
+	}
+
+	@Test
+	void testCaterPillarWalk() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Animal caterpillar = new Caterpillar();
+		caterpillar.walk();
+		Assert.assertEquals("I am walking\n", outContent.toString());
 	}
 
 }

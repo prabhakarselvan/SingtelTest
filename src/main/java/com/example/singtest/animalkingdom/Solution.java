@@ -99,6 +99,11 @@ public class Solution {
 		Animal butterfly = new Butterfly();
 		butterfly.fly();
 		butterfly.makesound();
+		
+		System.out.println("--------Caterpillar------------");
+		Caterpillar caterPillar = new Caterpillar();
+		caterPillar.fly();
+		caterPillar.walk();
 
 	}
 }
