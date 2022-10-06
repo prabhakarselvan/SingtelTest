@@ -23,6 +23,24 @@ public class Solution {
 		duck.fly();
 		duck.swim();
 		duck.walk();
+		
+		System.out.println("--------Rooster------------");
+		Animal rooster = new Rooster();
+		rooster.sing();
+		rooster.makesound();
+		rooster.fly();
+		rooster.swim();
+		rooster.walk();
+
+		System.out.println("--------RoosterWithoutInheritance------------");
+		RoosterWithoutInheritance roosterWithoutInheritance = new RoosterWithoutInheritance(
+				new Chicken("Cock-a-doodle-doo "));
+		Animal rooster1 = roosterWithoutInheritance.getChicken();
+		rooster1.sing();
+		rooster1.makesound();
+		rooster1.fly();
+		rooster1.swim();
+		rooster1.walk();
 
 	}
 }

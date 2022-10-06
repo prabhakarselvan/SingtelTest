@@ -13,6 +13,7 @@ import com.example.singtest.animalkingdom.Animal;
 import com.example.singtest.animalkingdom.Bird;
 import com.example.singtest.animalkingdom.Chicken;
 import com.example.singtest.animalkingdom.Duck;
+import com.example.singtest.animalkingdom.Rooster;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
@@ -62,6 +63,21 @@ class SingtelTestApplicationTests {
 		Animal chicken = new Chicken();
 		chicken.fly();
 		Assert.assertEquals("I cannot fly\n", outContent.toString());
+	}
+	
+	@Test
+	void testRoosterSound() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Animal rooster = new Rooster();
+		rooster.makesound();
+		Assert.assertEquals("Cock-a-doodle-doo\n", outContent.toString());
+	}
+
+	@Test
+	void testRoosterChickenRelation() {
+		Animal rooster = new Rooster();
+		Assert.assertTrue(rooster instanceof Chicken);
 	}
 
 }
