@@ -89,6 +89,11 @@ public class Solution {
 		clownFish.size();
 		clownFish.color();
 		clownFish.canMakeJokes();
+		
+		System.out.println("--------Dolphin------------");
+		Fish dolphinFish = new Dolphin().getDolphin();
+		dolphinFish.swim();
+		dolphinFish.walk();
 
 	}
 }

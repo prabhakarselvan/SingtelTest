@@ -15,6 +15,7 @@ import com.example.singtest.animalkingdom.Cat;
 import com.example.singtest.animalkingdom.Chicken;
 import com.example.singtest.animalkingdom.ClownFish;
 import com.example.singtest.animalkingdom.Dog;
+import com.example.singtest.animalkingdom.Dolphin;
 import com.example.singtest.animalkingdom.Duck;
 import com.example.singtest.animalkingdom.Fish;
 import com.example.singtest.animalkingdom.LivingWith;
@@ -201,6 +202,12 @@ class SingtelTestApplicationTests {
 		Fish shark = new Shark();
 		shark.eatOtherFish();
 		Assert.assertEquals("Eats other Fish\n", outContent.toString());
+	}
+	
+	@Test
+	void testDolphinSwims() {
+		Fish dolphin = new Dolphin().getDolphin();
+		Assert.assertTrue(dolphin.isCanSwim());
 	}
 
 }
