@@ -13,12 +13,14 @@ import com.example.singtest.animalkingdom.Animal;
 import com.example.singtest.animalkingdom.Bird;
 import com.example.singtest.animalkingdom.Cat;
 import com.example.singtest.animalkingdom.Chicken;
+import com.example.singtest.animalkingdom.ClownFish;
 import com.example.singtest.animalkingdom.Dog;
 import com.example.singtest.animalkingdom.Duck;
 import com.example.singtest.animalkingdom.Fish;
 import com.example.singtest.animalkingdom.LivingWith;
 import com.example.singtest.animalkingdom.Parrot;
 import com.example.singtest.animalkingdom.Rooster;
+import com.example.singtest.animalkingdom.Shark;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
@@ -148,6 +150,57 @@ class SingtelTestApplicationTests {
 	void testFishCanSwim() {
 		Animal fish = new Fish();
 		Assert.assertTrue(fish.isCanSwim());
+	}
+	
+	@Test
+	void testSharksSize() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Fish shark = new Shark();
+		shark.size();
+		Assert.assertEquals("Size is large\n", outContent.toString());
+	}
+
+	@Test
+	void testSharksColor() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Fish shark = new Shark();
+		shark.color();
+		Assert.assertEquals("Color is grey\n", outContent.toString());
+	}
+
+	@Test
+	void testClownFishSize() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Fish shark = new ClownFish();
+		shark.size();
+		Assert.assertEquals("Size is small\n", outContent.toString());
+	}
+
+	@Test
+	void testClownFishColor() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Fish shark = new ClownFish();
+		shark.color();
+		Assert.assertEquals("Color is orange\n", outContent.toString());
+	}
+	
+	@Test
+	void testFishMakeJokes() {
+		Fish fish = new ClownFish();
+		Assert.assertTrue(fish.isCanMakeJokes());
+	}
+
+	@Test
+	void testSharksEatOtherFish() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Fish shark = new Shark();
+		shark.eatOtherFish();
+		Assert.assertEquals("Eats other Fish\n", outContent.toString());
 	}
 
 }

@@ -72,6 +72,23 @@ public class Solution {
 		fish.swim();
 		fish.walk();
 		fish.sing();
+		
+		System.out.println("--------Shark------------");
+		Fish shark = new Shark();
+		shark.swim();
+		shark.walk();
+		shark.size();
+		shark.color();
+		shark.canMakeJokes();
+		shark.eatOtherFish();
+
+		System.out.println("--------ClownFish------------");
+		Fish clownFish = new ClownFish();
+		clownFish.swim();
+		clownFish.walk();
+		clownFish.size();
+		clownFish.color();
+		clownFish.canMakeJokes();
 
 	}
 }
