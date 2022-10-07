@@ -14,7 +14,7 @@ JDK 1.8.0_201, apache-maven-3.6.1, spring-boot 2.7.4</p>
 <p><strong>Build and run test cases</strong><br>
 mvn clean install</p>
 <p><strong>Launch Application</strong><br>
-mvn spingboot-run</p>
+mvn sping-boot:run</p>
 <p><strong>Test REST service</strong><br>
 curl --location --request GET 'http://localhost:8080/animal/Duck'<br>
 curl --location --request GET 'http://localhost:8080/animal/Butterfly'<br>
